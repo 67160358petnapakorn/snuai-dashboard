@@ -5,7 +5,7 @@ Dashboard เชิงเล่าเรื่องสำหรับวิช�
 
 > ข้อมูลทั้งหมดเป็นข้อมูลจำลอง (mock data) เพื่อการนำเสนอ
 
-**เปิดดูบนเว็บ:** https://YOUR-USERNAME.github.io/snuai-dashboard/
+**เปิดดูบนเว็บ:** https://67160358petnapakorn.github.io/snuai-dashboard/#s3
 
 ## เนื้อเรื่อง (พรีเซนต์ 3 นาที)
 1. ปัญหา – เหตุเสี่ยงเกิดเมื่อไรและแบบไหน
