@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SNUAi Dashboard – Smart Nursery Safety AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf6f4;--card:#fff;--ink:#2a1b1b;--mute:#7a6a6a;--red:#b01c1c;--safe:#1f8a78;--line:#e8dcd8;--amber:#d98a1f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1212;--card:#261a1a;--ink:#f4e9e6;--mute:#b3a09c;--red:#ff6b61;--safe:#4cc2ad;--line:#3a2a2a;--amber:#f0b04a}}
+:root[data-theme="dark"]{--bg:#1b1212;--card:#261a1a;--ink:#f4e9e6;--mute:#b3a09c;--red:#ff6b61;--safe:#4cc2ad;--line:#3a2a2a;--amber:#f0b04a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Prompt','Noto Sans Thai',system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{background:var(--red);color:#fff;padding:40px 0 32px}
+header h1{font-size:clamp(28px,5vw,46px);line-height:1.2;margin:0 0 8px;font-weight:700;max-width:18em}
+header p{margin:0;opacity:.9;max-width:44em;font-weight:300}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:8px 20px}
+nav a{white-space:nowrap;color:var(--ink);text-decoration:none;font-size:14px;padding:6px 12px;border-radius:99px;border:1px solid var(--line)}
+nav a:hover,nav a:focus-visible{background:var(--red);color:#fff;outline:none}
+section{padding:36px 0 8px}
+h2{font-size:22px;margin:0 0 4px}
+.lead{color:var(--mute);margin:0 0 18px;max-width:46em}
+.grid{display:grid;gap:14px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.kpi b{display:block;font-size:34px;line-height:1.1;font-weight:700}
+.kpi span{color:var(--mute);font-size:13px}
+.kpi.good b{color:var(--safe)}.kpi.bad b{color:var(--red)}
+.card h3{font-size:15px;margin:0 0 10px;font-weight:600}
+.note{font-size:13px;color:var(--mute);margin:10px 0 0}
+.note strong{color:var(--ink)}
+svg{width:100%;height:auto;display:block}
+svg text{fill:var(--mute);font-size:11px;font-family:inherit}
+.bar{margin:7px 0;font-size:13px}
+.bar div.t{display:flex;justify-content:space-between}
+.bar i{display:block;height:10px;border-radius:5px;margin-top:3px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:560px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;background:var(--bg)}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:6px;font-size:14px}
+.team div{padding:6px 10px;border-left:3px solid var(--red);background:var(--card)}
+.team span{color:var(--mute);margin-right:8px}
+footer{padding:32px 0 48px;color:var(--mute);font-size:13px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>เด็กล้มแล้วใครเห็นก่อน? SNUAi ทำให้ผู้ดูแลรู้ใน 35 วินาที</h1>
+<p>SNUAi (Smart Nursery Safety AI) – ระบบ AI CCTV ตรวจจับเด็กหกล้ม พื้นที่อันตราย และของมีคม แจ้งเตือนผ่าน LINE แบบ Real-time ด้วยกล้องเดิมของโรงเรียน</p>
+<p style="margin-top:8px;font-size:13px">วิชา Business Idea Creation • ข้อมูลในหน้านี้เป็นข้อมูลจำลอง (mock data) เพื่อการนำเสนอ</p>
+</div></header>
+<nav><div class="wrap">
+<a href="#s1">1 ปัญหา</a><a href="#s2">2 AI เห็นอะไร</a><a href="#s3">3 ผลลัพธ์</a><a href="#s4">4 ธุรกิจ</a><a href="#s5">5 ลูกค้า</a><a href="#fw">กรอบ Dashboard</a><a href="#data">Data</a><a href="#team">ทีม</a>
+</div></nav>
+
+<main class="wrap">
+<section id="s1">
+<h2>บทที่ 1 – ปัญหา: ครูหนึ่งคน มองเด็กไม่ทั่ว</h2>
+<p class="lead">ศูนย์เด็กเล็กตัวอย่าง 5 แห่ง ช่วง 6 เดือน พบเหตุการณ์เสี่ยงที่ระบบจับได้ 293 ครั้ง ส่วนใหญ่เกิดในช่วงเวลาที่ครูต้องดูแลเด็กพร้อมกันหลายกลุ่ม</p>
+<div class="grid g4" id="kpi1"></div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><h3>เหตุการณ์เสี่ยงแยกตามชั่วโมง (รวม 6 เดือน)</h3><svg id="hourChart" viewBox="0 0 480 220" role="img" aria-label="กราฟเหตุการณ์ตามชั่วโมง"></svg><p class="note"><strong>ข้อสังเกต:</strong> ช่วงพักกลางวันและเล่นสนาม (10:00 และ 15:00) มีเหตุการณ์สูงสุด</p></div>
+<div class="card"><h3>ประเภทเหตุการณ์</h3><div id="types"></div><p class="note"><strong>ข้อสังเกต:</strong> เด็กหกล้มคือเหตุการณ์ที่พบมากที่สุด จึงเป็นฟังก์ชันหลักของ SNUAi</p></div>
+</div>
+</section>
+
+<section id="s2">
+<h2>บทที่ 2 – AI เห็นอะไร และเชื่อถือได้แค่ไหน</h2>
+<p class="lead">AI ต้องแม่นพอที่ครูจะไม่เมินการแจ้งเตือน (Alert Fatigue คือความเสี่ยงที่ SWOT ระบุไว้) เราจึงติดตามอัตราแจ้งเตือนผิดพลาดทุกเดือน</p>
+<div class="grid g2">
+<div class="card"><h3>อัตราแจ้งเตือนผิดพลาด (False Alarm %)</h3><svg id="faChart" viewBox="0 0 480 200" role="img" aria-label="กราฟอัตราแจ้งเตือนผิด"></svg><p class="note"><strong>ข้อสังเกต:</strong> ลดจาก 32% เหลือ 8% เมื่อ Train โมเดลด้วยภาพจากสถานที่จริงเพิ่ม</p></div>
+<div class="card"><h3>พื้นที่ที่เกิดเหตุมากที่สุด</h3><div id="zones"></div><p class="note"><strong>ข้อสังเกต:</strong> สนามเด็กเล่นและบันไดรวมกัน คิดเป็นครึ่งหนึ่งของเหตุการณ์ทั้งหมด จึงควรวางกล้องเพิ่มที่จุดเหล่านี้</p></div>
+</div>
+</section>
+
+<section id="s3">
+<h2>บทที่ 3 – ผลลัพธ์: ผู้ดูแลตอบสนองเร็วขึ้น</h2>
+<p class="lead">เวลาตั้งแต่เกิดเหตุจนผู้ดูแลรับรู้ ลดลงจากเกือบ 4 นาทีเหลือ 35 วินาที</p>
+<div class="grid g2">
+<div class="card"><h3>เวลาตอบสนองเฉลี่ย (วินาที)</h3><svg id="rtChart" viewBox="0 0 480 200" role="img" aria-label="กราฟเวลาตอบสนอง"></svg></div>
+<div class="grid g4" id="kpi3" style="grid-template-columns:1fr 1fr"></div>
+</div>
+</section>
+
+<section id="s4">
+<h2>บทที่ 4 – ธุรกิจ: ปีแรกคุ้มทุนได้หรือไม่</h2>
+<p class="lead">โครงสร้างรายได้และต้นทุนอิงจาก Business Model Canvas (ตัวเลขจำลองต่อปี สำหรับ 5 สถานศึกษา)</p>
+<div class="grid g2">
+<div class="card"><h3>รายได้ (บาท/ปี)</h3><div id="rev"></div></div>
+<div class="card"><h3>ต้นทุน (บาท/ปี)</h3><div id="cost"></div></div>
+</div>
+<div class="grid g4" id="kpi4" style="margin-top:14px"></div>
+</section>
+
+<section id="s5">
+<h2>บทที่ 5 – ลูกค้า: จากรู้จักสู่บอกต่อ</h2>
+<p class="lead">ติดตามลูกค้า 6 ขั้นตามแผนการตลาด (Awareness → Advocacy) เพื่อดูว่าขั้นไหนต้องเร่งก่อน</p>
+<div class="card"><h3>ผู้สนใจในแต่ละขั้น (ราย)</h3><div id="funnel"></div><p class="note"><strong>ข้อสังเกต:</strong> จากขั้น Consideration ไปขั้น Purchase หายไปมากที่สุด จึงควรเสริมการทดลองใช้ฟรีและ Case Study</p></div>
+</section>
+
+<section id="fw">
+<h2>ตารางกรอบ Dashboard (Framework)</h2>
+<p class="lead">ใช้เล่าเรื่อง 3 นาที ประมาณบทละ 35 วินาที</p>
+<div class="card scroll"><table>
+<tr><th>บท</th><th>คำถามที่ตอบ</th><th>ตัวชี้วัด</th><th>กราฟ</th><th>ผู้ชมทำอะไรต่อ</th></tr>
+<tr><td>1 ปัญหา</td><td>เหตุเสี่ยงเกิดเมื่อไรและแบบไหน</td><td>จำนวนเหตุ, ชั่วโมงสูงสุด, สัดส่วนประเภท</td><td>แท่งตามชั่วโมง, แท่งแนวนอน</td><td>เพิ่มครูช่วงเวลาเสี่ยง</td></tr>
+<tr><td>2 AI</td><td>AI แม่นพอหรือไม่</td><td>False Alarm %, พื้นที่เสี่ยง</td><td>เส้น, แท่งแนวนอน</td><td>วางกล้องเพิ่มที่จุดเสี่ยง</td></tr>
+<tr><td>3 ผลลัพธ์</td><td>ตอบสนองเร็วขึ้นเท่าไร</td><td>เวลาตอบสนองเฉลี่ย</td><td>เส้น</td><td>ใช้เป็นหลักฐานขาย</td></tr>
+<tr><td>4 ธุรกิจ</td><td>รายได้คุ้มต้นทุนหรือไม่</td><td>รายได้, ต้นทุน, กำไร, จุดคุ้มทุน</td><td>แท่งแนวนอน</td><td>ตั้งราคา Package</td></tr>
+<tr><td>5 ลูกค้า</td><td>ลูกค้าหลุดที่ขั้นไหน</td><td>Conversion แต่ละขั้น</td><td>Funnel</td><td>เร่งแคมเปญที่ขั้นหลุดมาก</td></tr>
+</table></div>
+</section>
+
+<section id="data">
+<h2>ข้อมูลที่ใช้ (Data)</h2>
+<p class="lead">ตารางรายเดือนต่อไปนี้คือข้อมูลที่กราฟด้านบนดึงมาใช้ สามารถคัดลอกไปไว้ใน data/monthly.csv ของ Repository</p>
+<div class="card scroll"><table id="dt"></table></div>
+</section>
+
+<section id="team">
+<h2>รายชื่อกลุ่ม</h2>
+<p class="lead">ตรวจสอบรายชื่อให้ครบก่อนส่ง</p>
+<div class="team">
+<div><span>67160173</span>ภาณัฏฐ์ศญา โชติ</div>
+<div><span>67160323</span>ชลธี กิมสร้อย</div>
+<div><span>67160356</span>พิชาชนันท์ จอมม้อย</div>
+<div><span>67160358</span>เพชรนภากร พลนิกร</div>
+<div><span>67160361</span>ภัทรวดี โชควิสิฐกุล</div>
+<div><span>67160369</span>วรพล พนานิธิมงคล</div>
+<div><span>67160376</span>สิริภพ ณ ระนอง</div>
+<div><span>67160377</span>สุชานันธ์ มีศรี</div>
+<div><span>67160381</span>อนุสรา กล่ำสวัสดิ์</div>
+</div>
+</section>
+</main>
+<footer><div class="wrap">SNUAi • Business Idea Creation • ข้อมูลทั้งหมดเป็นข้อมูลจำลอง</div></footer>
+
+<script>
+const months=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.'];
+const D={
+ incidents:[38,44,52,55,49,55],
+ falseAlarm:[32,24,18,13,10,8],
+ response:[236,190,120,75,48,35],
+ hours:{'07':2,'08':6,'09':9,'10':34,'11':14,'12':22,'13':11,'14':17,'15':41,'16':23,'17':14},
+ types:[['เด็กหกล้ม',142,'var(--red)'],['เข้าพื้นที่อันตราย',87,'var(--amber)'],['ออกนอกพื้นที่',34,'var(--safe)'],['รวมกลุ่มผิดปกติ',21,'var(--mute)'],['อาวุธ/ของมีคม',9,'var(--ink)']],
+ zones:[['สนามเด็กเล่น',96],['บันได',58],['ห้องเรียน',49],['ทางเข้า-ออก',44],['ห้องน้ำ',26],['ห้องครัว',20]],
+ rev:[['ค่าสมาชิกรายเดือน/ปี',360000],['ค่าติดตั้งระบบ',180000],['ค่า AI Camera',240000],['ค่าบำรุงรักษารายปี',90000],['ค่า Customize โมเดล',60000]],
+ cost:[['ค่าแรงทีมงาน',300000],['ฮาร์ดแวร์และกล้อง',220000],['Server / Cloud',96000],['Train AI Model',80000],['Database',40000]],
+ funnel:[['Awareness',1000],['Interest',420],['Consideration',150],['Purchase',36],['Retention',31],['Advocacy',12]]
+};
+const sum=a=>a.reduce((s,x)=>s+x,0),fmt=n=>n.toLocaleString('th-TH');
+const total=sum(D.incidents);
+const kpi=(v,l,c='')=>`<div class="card kpi ${c}"><b>${v}</b><span>${l}</span></div>`;
+document.getElementById('kpi1').innerHTML=kpi(total,'เหตุการณ์เสี่ยงที่ตรวจพบ (6 เดือน)')+kpi('48%','เป็นเหตุเด็กหกล้ม','bad')+kpi('10:00 และ 15:00','ชั่วโมงที่เกิดเหตุสูงสุด');
+document.getElementById('kpi3').innerHTML=kpi('−85%','เวลาตอบสนอง (236 → 35 วินาที)','good')+kpi('8%','อัตราแจ้งเตือนผิดล่าสุด','good')+kpi('5','สถานศึกษาตัวอย่าง')+kpi('24/7','ตรวจจับตลอดเวลาเปิดทำการ');
+// bar chart
+function bars(id,labels,vals,hl){const W=480,H=220,p=28,bw=(W-p*2)/vals.length,m=Math.max(...vals);let s='';
+ vals.forEach((v,i)=>{const h=(H-p-24)*v/m,x=p+i*bw+4,y=H-p-h;s+=`<rect x="${x}" y="${y}" width="${bw-8}" height="${h}" rx="3" fill="${v>=hl?'var(--red)':'var(--line)'}"/><text x="${x+(bw-8)/2}" y="${y-4}" text-anchor="middle">${v}</text><text x="${x+(bw-8)/2}" y="${H-10}" text-anchor="middle">${labels[i]}</text>`});
+ document.getElementById(id).innerHTML=s}
+bars('hourChart',Object.keys(D.hours),Object.values(D.hours),30);
+function line(id,vals,color,unit){const W=480,H=200,p=34,m=Math.max(...vals)*1.15,pts=vals.map((v,i)=>[p+i*(W-p*2)/(vals.length-1),H-p-(H-p*2)*v/m]);
+ let s=`<polyline fill="none" stroke="${color}" stroke-width="3" points="${pts.map(q=>q.join(',')).join(' ')}"/>`;
+ pts.forEach((q,i)=>{s+=`<circle cx="${q[0]}" cy="${q[1]}" r="4" fill="${color}"/><text x="${q[0]}" y="${q[1]-10}" text-anchor="middle">${vals[i]}${unit}</text><text x="${q[0]}" y="${H-10}" text-anchor="middle">${months[i]}</text>`});
+ document.getElementById(id).innerHTML=s}
+line('faChart',D.falseAlarm,'var(--amber)','%');
+line('rtChart',D.response,'var(--safe)','');
+function hbars(id,rows,color,unit=''){const m=Math.max(...rows.map(r=>r[1]));
+ document.getElementById(id).innerHTML=rows.map(r=>`<div class="bar"><div class="t"><span>${r[0]}</span><b>${fmt(r[1])}${unit}</b></div><i style="width:${r[1]/m*100}%;background:${r[2]||color}"></i></div>`).join('')}
+hbars('types',D.types);hbars('zones',D.zones,'var(--red)');
+hbars('rev',D.rev,'var(--safe)');hbars('cost',D.cost,'var(--amber)');
+const R=sum(D.rev.map(r=>r[1])),C=sum(D.cost.map(r=>r[1])),P=R-C;
+document.getElementById('kpi4').innerHTML=kpi('฿'+fmt(R),'รายได้รวมต่อปี')+kpi('฿'+fmt(C),'ต้นทุนรวมต่อปี')+kpi('฿'+fmt(P),'กำไรสุทธิ (ประมาณ)',P>0?'good':'bad')+kpi(Math.round(C/R*12)+' เดือน','จุดคุ้มทุนโดยประมาณ');
+document.getElementById('funnel').innerHTML=D.funnel.map((r,i)=>{const pc=i?Math.round(r[1]/D.funnel[i-1][1]*100)+'% จากขั้นก่อน':'ฐานเริ่มต้น';return `<div class="bar"><div class="t"><span>${r[0]}</span><b>${fmt(r[1])} <small style="color:var(--mute);font-weight:300">${pc}</small></b></div><i style="width:${r[1]/D.funnel[0][1]*100}%;background:var(--red);opacity:${1-i*.12}"></i></div>`}).join('');
+document.getElementById('dt').innerHTML='<tr><th>เดือน</th><th>เหตุการณ์ (ครั้ง)</th><th>False Alarm (%)</th><th>เวลาตอบสนอง (วินาที)</th></tr>'+months.map((m,i)=>`<tr><td>${m}</td><td>${D.incidents[i]}</td><td>${D.falseAlarm[i]}</td><td>${D.response[i]}</td></tr>`).join('');
+</script>
+</body>
+</html>
